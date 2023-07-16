@@ -9,9 +9,9 @@ class MoneyDetails extends Component {
       let income = 0
       let expense = 0
       transactionDetails.map(eachItem => {
-        if (eachItem.type === 'Income') {
+        if (eachItem.type === 'INCOME') {
           income += parseInt(eachItem.amount)
-        } else if (eachItem.type === 'Expenses') {
+        } else if (eachItem.type === 'EXPENSES') {
           expense += parseInt(eachItem.amount)
         }
         return 0
@@ -33,7 +33,9 @@ class MoneyDetails extends Component {
           />
           <div className="balance-mini-container">
             <p>Your Balance</p>
-            <h1>RS {balance}</h1>
+            <p className="balance" data-testid="balanceAmount">
+              RS {balance}
+            </p>
           </div>
         </div>
         <div className="income-container container-style">
@@ -43,7 +45,9 @@ class MoneyDetails extends Component {
           />
           <div className="balance-mini-container">
             <p>Your Income</p>
-            <h1>RS {income}</h1>
+            <p className="balance" data-testid="incomeAmount">
+              RS {income}
+            </p>
           </div>
         </div>
         <div className="expenses-container container-style">
@@ -53,7 +57,9 @@ class MoneyDetails extends Component {
           />
           <div className="balance-mini-container">
             <p>Your Expenses</p>
-            <h1>RS {expense}</h1>
+            <p className="balance" data-testid="expensesAmount">
+              RS {expense}
+            </p>
           </div>
         </div>
       </>

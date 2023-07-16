@@ -101,7 +101,7 @@ class MoneyManager extends Component {
               <label htmlFor="type">TYPE</label>
               <select id="type" onClick={this.handleTypeInput}>
                 {transactionTypeOptions.map(eachItem => (
-                  <option key={eachItem.optionId} value={eachItem.displayText}>
+                  <option key={eachItem.optionId} value={eachItem.optionId}>
                     {eachItem.displayText}
                   </option>
                 ))}
@@ -119,11 +119,11 @@ class MoneyManager extends Component {
             <h1>History</h1>
 
             <ul className="history-items-container">
-              <div className="history-item-table">
+              <li className="history-item-table">
                 <p>Title</p>
                 <p>Amount</p>
                 <p>Type</p>
-              </div>
+              </li>
               {historyItemsList.map(eachItem => (
                 <TransactionItem
                   key={eachItem.id}
